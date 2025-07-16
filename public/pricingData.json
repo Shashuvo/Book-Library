@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "name": "Basic",
+        "price": "$9.99/month",
+        "description": "For individuals needing simple access to core library features.",
+        "features": [
+            "Access to all public eBooks",
+            "Basic search functionality",
+            "1 concurrent device",
+            "Standard support"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Standard",
+        "price": "$19.99/month",
+        "description": "For avid readers and small teams with enhanced features.",
+        "features": [
+            "Access to all public and premium eBooks",
+            "Advanced search & filtering",
+            "3 concurrent devices",
+            "Priority email support",
+            "Offline access"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Premium",
+        "price": "$29.99/month",
+        "description": "For professionals and organizations needing full access and advanced tools.",
+        "features": [
+            "Unlimited access to all eBooks and audiobooks",
+            "Personalized recommendations",
+            "Unlimited concurrent devices",
+            "24/7 chat & phone support",
+            "Customizable reading lists",
+            "Early access to new releases"
+        ]
+    }
+]
