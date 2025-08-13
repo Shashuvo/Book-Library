@@ -5,7 +5,7 @@ import PricingFeatures from './PricingFeatures';
 const PricingCards = ({pricing}) => {
     const  {name, price, description, features} = pricing;
     return (
-        <div className='border bg-blue-400 rounded-3xl p-6'>
+        <div className='border bg-blue-400 rounded-3xl p-6 flex flex-col'>
             {/* card header */}
             <div>
                 <h1 className='text-3xl'>{name}</h1>
@@ -13,12 +13,13 @@ const PricingCards = ({pricing}) => {
             </div>
 
             {/* card body */}
-            <div className='bg-blue-200 rounded-3xl p-4 mt-4'>
+            <div className='bg-blue-200 rounded-3xl p-4 mt-4 flex-1'>
                 <p>{description}</p>
                 {
                     features.map((feature, index) => <PricingFeatures key={index} feature={feature}></PricingFeatures> )
                 }
             </div>
+            <button className="btn w-full rounded-3xl mt-4 bg-white">Subscribe</button>
         </div>
     );
 };
