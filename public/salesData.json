@@ -1,0 +1,66 @@
+[
+    {
+      "name": "Pride and Prejudice",
+      "sales": {
+        "online": 1200,
+        "physical": 600,
+        "audiobook": 200
+      },
+      "category": "Classic Literature"
+    },
+    {
+      "name": "The Kite Runner",
+      "sales": {
+        "online": 1500,
+        "physical": 700,
+        "audiobook": 250
+      },
+      "category": "Contemporary Fiction"
+    },
+    {
+      "name": "Life of Pi",
+      "sales": {
+        "online": 1100,
+        "physical": 1000,
+        "audiobook": 400
+      },
+      "category": "Adventure Fiction"
+    },
+    {
+      "name": "A Man Called Ove",
+      "sales": {
+        "online": 1700,
+        "physical": 1000,
+        "audiobook": 300
+      },
+      "category": "Contemporary Fiction"
+    },
+    {
+      "name": "Lalsalu",
+      "sales": {
+        "online": 900,
+        "physical": 900,
+        "audiobook": 300
+      },
+      "category": "Bangladeshi Literature"
+    },
+    {
+      "name": "The Book Thief",
+      "sales": {
+        "online": 1400,
+        "physical": 1200,
+        "audiobook": 400
+      },
+      "category": "Historical Fiction"
+    },
+    {
+      "name": "One Hundred Years of Solitude",
+      "sales": {
+        "online": 1300,
+        "physical": 800,
+        "audiobook": 300
+      },
+      "category": "Magical Realism"
+    }
+  ]
+  

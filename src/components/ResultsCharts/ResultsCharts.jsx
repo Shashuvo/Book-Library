@@ -1,50 +1,7 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Bar, BarChart, CartesianGrid, Tooltip, XAxis, YAxis } from 'recharts';
 
-const ResultsData = [
-  {
-    name: 'Pride and Prejudice',
-    uv: 1200, // Online sales
-    pv: 800,  // Physical sales
-    amt: 2000 // Total sales
-  },
-  {
-    name: 'The Kite Runner',
-    uv: 1500,
-    pv: 950,
-    amt: 2450
-  },
-  {
-    name: 'Life of Pi',
-    uv: 1100,
-    pv: 1400,
-    amt: 2500
-  },
-  {
-    name: 'A Man Called Ove',
-    uv: 1700,
-    pv: 1300,
-    amt: 3000
-  },
-  {
-    name: 'Lalsalu',
-    uv: 900,
-    pv: 1200,
-    amt: 2100
-  },
-  {
-    name: 'The Book Thief',
-    uv: 1400,
-    pv: 1600,
-    amt: 3000
-  },
-  {
-    name: 'One Hundred Years of Solitude',
-    uv: 1300,
-    pv: 1100,
-    amt: 2400
-  }
-];
+
 
 const getIntroOfPage = (label) => {
   if (label === 'Pride and Prejudice') {
@@ -87,23 +44,38 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 
 
-const ResultsCharts = () => {
-    return (
-        <div className='flex justify-center mt-4'>
-            <BarChart width={1400} height={400} data={ResultsData} margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}>
-            <CartesianGrid strokeDasharray="3 3"></CartesianGrid>
-            <XAxis dataKey={"name"}></XAxis>
-            <YAxis></YAxis>
-            <Tooltip content={CustomTooltip}></Tooltip>
-            <Bar dataKey={"pv"} barSize={20} fill='#63b3ed'></Bar>
-            </BarChart>
-        </div>
-    );
+const ResultsCharts = ({salesPromise}) => {
+  const ResultsDataRes = use(salesPromise);
+  const ResultsData = ResultsDataRes.data;
+
+  // Data processsing for the chart
+  const ResultsDataCharts = ResultsData.map(bookData => {
+    const book = {
+      name: bookData.name,
+      uv: bookData.sales.online,
+      pv: bookData.sales.physical,
+      amt: bookData.sales.audiobook,
+      category: bookData.category
+    }
+    return book;
+  })
+
+  return (
+    <div className='flex justify-center mt-4'>
+      <BarChart width={1400} height={400} data={ResultsDataCharts} margin={{
+        top: 5,
+        right: 30,
+        left: 20,
+        bottom: 5,
+      }}>
+        <CartesianGrid strokeDasharray="3 3"></CartesianGrid>
+        <XAxis dataKey={"name"}></XAxis>
+        <YAxis></YAxis>
+        <Tooltip content={CustomTooltip}></Tooltip>
+        <Bar dataKey={"pv"} barSize={20} fill='#63b3ed'></Bar>
+      </BarChart>
+    </div>
+  );
 };
 
 export default ResultsCharts;
